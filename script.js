@@ -51,7 +51,10 @@ function updateSizeValue(value) {
 }
 
 function reloadGrid(){
-    grid.innerHTML = '';
+    const gridElements =  document.querySelectorAll('.grid-element');
+    gridElements.forEach(gridElement => {
+        gridElement.style.cssText = "background-color: ''";
+    })
 }
 
 function setupGrid(size) {
