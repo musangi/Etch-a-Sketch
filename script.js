@@ -1,4 +1,4 @@
-const default_color = '#333333';
+const default_color = '#93066d';
 const default_mode = 'color';
 const default_size = 16;
 
@@ -77,7 +77,7 @@ function changeColor(e) {
         const randomB = Math.floor(Math.random() * 256);
         e.target.style.cssText = `background-color: rgb(${randomR}, ${randomG}, ${randomB})`;
     } else if (current_mode === 'color') {
-        e.target.style.cssText = `background-color: ${currentColor}`;
+        e.target.style.cssText = `background-color: ${current_color}`;
     } else if (current_mode === 'eraser') {
         e.target.style.cssText = "background-color: #fefefe";
     }
