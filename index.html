@@ -4,10 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch-a-Sketch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="favico.ico">
     <link rel="stylesheet" href="style.css">
+
+    <script src="https://kit.fontawesome.com/4c536a6bd5.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <h1 class="title">Etch-a-Sketch</h1>
+    <main class="main">
+        <div class="settings">
+            <input type="color" id="colorPicker" value="#333">
+            <button id="colorBtn">Color Mode</button>
+            <button id="rainbowBtn">Rainbow Mode</button>
+            <button id="eraserBtn">Eraser Mode</button>
+            <button id="clearBtn">Clear</button>
+            <div class="size-value" id="sizeValue">16 x 16</div>
+            <input type="range" id="sizeSlider" value="16" min="1" max="64">
+        </div>
+        <div id="grid" class="grid"></div>
+    </main>
+    <footer class="footer">
+        <p>Copyright <script>document.write(new Date().getFullYear())</script>musangi</p>
+        <a href="https://github.com/musangi" target="_blank">
+            <i class="fab fa-github"></i>
+        </a>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
