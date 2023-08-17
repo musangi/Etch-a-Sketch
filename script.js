@@ -6,6 +6,8 @@ let current_color = default_color;
 let current_mode = default_mode;
 let current_size = default_size;
 
+let interactions = 0;
+
 function setCurrentColor(newColor) {
     current_color = newColor;
 }
@@ -74,16 +76,25 @@ function changeColor(e) {
     if(e.type === 'mouseover' && !mouseDown) {
         return false;
     }
+    let newColor;
+    
     if( current_mode === 'rainbow') {
         const randomR = Math.floor(Math.random() * 256);
         const randomG = Math.floor(Math.random() * 256);
         const randomB = Math.floor(Math.random() * 256);
-        e.target.style.cssText = `background-color: rgb(${randomR}, ${randomG}, ${randomB})`;
+        newColor = `rgb(${randomR}, ${randomG}, ${randomB})`;
     } else if (current_mode === 'color') {
-        e.target.style.cssText = `background-color: ${current_color}`;
+        newColor = current_color;
     } else if (current_mode === 'eraser') {
-        e.target.style.cssText = "background-color: #fefefe";
+        newColor = '#fefefe';
     }
+
+    if(interactions < 10) {
+        interactions++;
+        const darkness = interactions * 10;
+        e.target.style.cssText = `background-color: rgba(0, 0, 0, ${darkness / 100})`;
+    }
+    e.target.style.backgroundColor = newColor;
 }
 
 function activateButton(newMode) {

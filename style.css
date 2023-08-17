@@ -146,7 +146,7 @@ input[type='range']::-webkit-slider-thumb {
     display: grid;
     width: 500px;
     height: 500px;
-    background-color: rgba(0, 0, 0, 0.24)0px 3px 8px;
+    background-color: rgba(24, 11, 11, 0.24) 0px 3px 8px;
 }
 
 .grid-element {
