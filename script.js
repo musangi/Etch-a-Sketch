@@ -71,13 +71,13 @@ function changeColor(e) {
     if(e.type === 'mouseover' && !mouseDown) {
         return false;
     }
-    if( currentMode === 'rainbow') {
+    if( current_mode === 'rainbow') {
         const randomR = Math.floor(Math.random() * 256);
         const randomG = Math.floor(Math.random() * 256);
         const randomB = Math.floor(Math.random() * 256);
-        e.target.style.cssText = "background-color:`rgb(${randomR}, ${randomG}, ${randomB})`";
+        e.target.style.cssText = `background-color: rgb(${randomR}, ${randomG}, ${randomB})`;
     } else if (current_mode === 'color') {
-        e.target.style.cssText = "background-color: currentColor";
+        e.target.style.cssText = `background-color: ${currentColor}`;
     } else if (current_mode === 'eraser') {
         e.target.style.cssText = "background-color: #fefefe";
     }
